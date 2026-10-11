@@ -2,47 +2,33 @@
 
 ## English
 
-Server-controlled player ranks, permissions and titles. Minecraft 1.20.1 / Forge 47.x.
+Server controlled player ranks, permissions, titles, name tags and chat styling for Minecraft 1.20.1, Forge 47.x and Java 17. The client shows the custom rank/title interfaces and visual assets.
 
-### Installation
+### Install the pair
 
-Install the labeled server JAR on the server and its compatible client JAR on players' clients. Both files belong to the same CurseForge project. The two version numbers may differ; follow the stated pair, never mix releases. Required mod dependencies shown by current source metadata: **ZoneCore**. Check the dependency version range of the exact uploaded file before installation.
+Install zoneranks-server-3.3.9-protected.jar and ZG ZoneCore 2.1.0+ on the dedicated server. Install zoneranks-client-3.3.3-protected.jar on each client. Both JARs are on this **one CurseForge project**. The rank and title channels remain protocols 4 and 1. ZoneCrates 2.0.0+ is optional on the server, but needed for title purchases with Gochocoins. Keep the server and client versions stated here together.
 
-### Configuration
+### Use
 
-Edit generated TOML files while the server or game is stopped unless a documented reload command is available. Back up persistent data before updates.
+Administrators can assign ranks, edit prefixes/colors/icons, grant permission nodes and manage titles through commands or the custom editor. /rangos permisos disponibles [page] lists permission nodes published by loaded Forge and ZoneCore modules; /rangos permisos buscar <text> [page] filters them. Mods that do not publish nodes cannot be enumerated, but their node strings can be entered manually. /zoneranks reload applies edits to rank TOML; /titulo reload applies title catalog edits. The optional marker zoneranks.commands.usuario grants a rank the current USUARIO permission set; it is **not** granted to other ranks automatically.
 
-| Config file | Use |
-|---|---|
-| `zoneranks-common.toml` | Verify the exact generated path and options for the selected release. |
-| `permisos/rangos.toml` | Verify the exact generated path and options for the selected release. |
-| `jugadores/asignaciones.toml` | Verify the exact generated path and options for the selected release. |
-| `titulos/catalogo.toml` | Verify the exact generated path and options for the selected release. |
-
-See [configuration reference](CONFIGURATION.md) for keys detected in source and [release compatibility](RELEASES.md) for version-pair rules.
+Read [TOML paths and fields](CONFIGURATION.md) and [release compatibility](RELEASES.md). Back up the world and config/ZONEMODS/zoneranks before updating. Server rank and player data are persistent; do not publish assignments with real player UUIDs.
 
 ## Español
 
-Rangos, permisos y títulos de jugadores controlados por el servidor. Minecraft 1.20.1 / Forge 47.x.
+Rangos, permisos, títulos, etiquetas de nombre y estilo de chat controlados por el servidor para Minecraft 1.20.1, Forge 47.x y Java 17. El cliente muestra las interfaces personalizadas y recursos visuales.
 
-### Instalación
+### Instala la pareja
 
-Instala el JAR marcado servidor en el servidor y su JAR cliente compatible en los clientes. Ambos archivos pertenecen al mismo proyecto CurseForge. Los números de versión pueden diferir; respeta la pareja indicada y no mezcles entregas. Dependencias obligatorias indicadas por los metadatos actuales: **ZoneCore**. Comprueba el rango de versión del archivo exacto que instales.
+Instala zoneranks-server-3.3.9-protected.jar y ZG ZoneCore 2.1.0+ en el servidor dedicado. Instala zoneranks-client-3.3.3-protected.jar en cada cliente. Ambos JAR están en **un único proyecto CurseForge**. Los canales de rangos y títulos conservan protocolos 4 y 1. ZoneCrates 2.0.0+ es opcional en servidor, pero necesario para comprar títulos con Gochocoins. Usa junta la pareja indicada.
 
-### Configuración
+### Uso
 
-Edita los TOML generados con el servidor o juego detenido, salvo que exista un comando de recarga documentado. Respalda los datos persistentes antes de actualizar.
+El administrador asigna rangos, edita prefijos, colores e iconos, concede nodos de permisos y gestiona títulos mediante comandos o editor propio. /rangos permisos disponibles [pagina] enumera los nodos publicados por Forge y ZoneCore de mods cargados; /rangos permisos buscar <texto> [pagina] los filtra. Los nodos no publicados no pueden enumerarse, pero pueden escribirse a mano. /zoneranks reload aplica cambios del TOML de rangos; /titulo reload aplica el catálogo de títulos. El marcador opcional zoneranks.commands.usuario concede a un rango los permisos actuales de USUARIO; **no** se asigna automáticamente a otros rangos.
 
-| Archivo de configuración | Uso |
-|---|---|
-| `zoneranks-common.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `permisos/rangos.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `jugadores/asignaciones.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `titulos/catalogo.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-
-Consulta la [referencia de configuración](CONFIGURATION.md) para claves detectadas en el código y la [compatibilidad de entregas](RELEASES.md) para las parejas de versiones.
+Consulta [rutas y claves TOML](CONFIGURATION.md) y [compatibilidad](RELEASES.md). Respalda el mundo y config/ZONEMODS/zoneranks antes de actualizar. Los datos de rangos y jugadores persisten; no publiques asignaciones con UUID reales.
 
 ## Ownership / Titularidad
 
-Documentation and original ZONE visual assets © Elgochogms. This repository contains documentation and a project avatar only; it does not distribute mod source code, private mappings, server secrets or production configuration.
+Copyright © 2026 Elgochogms. New server 3.3.9 and client 3.3.3 binaries are All Rights Reserved. Earlier releases retain their original license rights. This repository contains documentation and the original ZG avatar only; no source, private maps or player data. Obfuscation cannot make Java bytecode impossible to decompile.
 
