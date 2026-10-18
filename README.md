@@ -1,4 +1,4 @@
-# ZG ZoneRanks
+# ZoneRanks
 
 ## Update / Actualización — 2026-10-17
 
@@ -12,7 +12,7 @@ Server controlled player ranks, permissions, titles, name tags and chat styling 
 
 ### Install the pair
 
-Install zoneranks-server-3.3.10-protected.jar and ZG ZoneCore 2.1.0+ on the dedicated server. Install zoneranks-client-3.3.4-protected.jar on each client. Both JARs are on this **one CurseForge project**. The rank and title channels remain protocols 4 and 1. ZoneCrates 2.0.0+ is optional on the server, but needed for title purchases with Gochocoins. Keep the server and client versions stated here together.
+Install zoneranks-server-3.3.10-protected.jar and ZoneCore 2.1.0+ on the dedicated server. Install zoneranks-client-3.3.4-protected.jar on each client. Both JARs are on this **one CurseForge project**. The rank and title channels remain protocols 4 and 1. ZoneCrates 2.0.0+ is optional on the server, but needed for title purchases with Gochocoins. Keep the server and client versions stated here together.
 
 ### Use
 
@@ -26,7 +26,7 @@ Rangos, permisos, títulos, etiquetas de nombre y estilo de chat controlados por
 
 ### Instala la pareja
 
-Instala zoneranks-server-3.3.10-protected.jar y ZG ZoneCore 2.1.0+ en el servidor dedicado. Instala zoneranks-client-3.3.4-protected.jar en cada cliente. Ambos JAR están en **un único proyecto CurseForge**. Los canales de rangos y títulos conservan protocolos 4 y 1. ZoneCrates 2.0.0+ es opcional en servidor, pero necesario para comprar títulos con Gochocoins. Usa junta la pareja indicada.
+Instala zoneranks-server-3.3.10-protected.jar y ZoneCore 2.1.0+ en el servidor dedicado. Instala zoneranks-client-3.3.4-protected.jar en cada cliente. Ambos JAR están en **un único proyecto CurseForge**. Los canales de rangos y títulos conservan protocolos 4 y 1. ZoneCrates 2.0.0+ es opcional en servidor, pero necesario para comprar títulos con Gochocoins. Usa junta la pareja indicada.
 
 ### Uso
 
@@ -36,5 +36,5 @@ Consulta [rutas y claves TOML](CONFIGURATION.md) y [compatibilidad](RELEASES.md)
 
 ## Ownership / Titularidad
 
-Copyright © 2026 Elgochogms. New server 3.3.10 and client 3.3.4 binaries are All Rights Reserved. Earlier releases retain their original license rights. This repository contains documentation and the original ZG avatar only; no source, private maps or player data. Obfuscation cannot make Java bytecode impossible to decompile.
+Copyright © 2026 Elgochogms. New server 3.3.10 and client 3.3.4 binaries are All Rights Reserved. Earlier releases retain their original license rights. This repository contains documentation and the original avatar only; no source, private maps or player data. Obfuscation cannot make Java bytecode impossible to decompile.
 
