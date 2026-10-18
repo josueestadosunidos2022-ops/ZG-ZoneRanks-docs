@@ -1,4 +1,4 @@
-# ZG ZoneRanks — TOML configuration reference
+# ZoneRanks — TOML configuration reference
 
 This guide describes **server 3.3.9 / client 3.3.3**. The Forge keys below show source defaults. The dynamic TOML files are server owned under config/ZONEMODS/zoneranks. / Esta guía corresponde a **servidor 3.3.9 / cliente 3.3.3**. Las claves Forge siguientes muestran valores iniciales; los archivos TOML dinámicos pertenecen al servidor en config/ZONEMODS/zoneranks.
 
