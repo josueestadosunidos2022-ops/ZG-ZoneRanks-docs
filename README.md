@@ -1,56 +1,40 @@
 # ZoneRanks
 
-## Current builds / Versiones actuales — 2026-11-03
+## Current builds / Versiones actuales — 2026-11-04
 
-| Side / Lado | Version / Versión | CurseForge |
+| Side / Lado | Version / Versión | File / Archivo |
 |---|---|---|
-| ZoneRanks server | 3.3.11 | [Files / Archivos](https://www.curseforge.com/minecraft/mc-mods/zoneranks/files/9426467) |
+| server | 3.3.12 | [zoneranks-server-3.3.12-protected.jar](https://www.curseforge.com/projects/1738043/files/9438567) |
+| client | 3.3.6 | [zoneranks-client-3.3.6-protected.jar](https://www.curseforge.com/projects/1738043/files/9438605) |
 
-Client 3.3.4 is unchanged and compatible. / El cliente 3.3.4 no cambia y sigue compatible.
+Minecraft 1.20.1 / Forge 47.4.x / Java 17. Protected public Beta builds; availability depends on each file approval. / Betas públicas protegidas; disponibilidad según aprobación de cada archivo.
 
-[Changes, installation and compatibility / Cambios, instalación y compatibilidad](RELEASE-2026-11-03.md).
+## English — What is new
 
-Public protected Beta builds. A submitted file becomes downloadable only after CurseForge approval. / Betas públicas protegidas: cada archivo queda descargable cuando CurseForge lo aprueba.
+Reworked rank/title editors with blue/purple/cyan styling, server-paged direct permissions, deletion confirmation, retained drafts and bitmap icons. Client 3.3.6 expands the logical editor to 450px and separates labels/fields/navigation to address clipping. Use SERVER 3.3.12 with CLIENT 3.3.6; RankNetwork 5 / TitleNetwork 1. The server file is unchanged from the local 3.3.12 delivery.
 
-## Earlier documentation / Documentación anterior
+## Español — Novedades
 
-The version and side table above takes precedence over historical versions below. / La tabla anterior prevalece sobre versiones históricas de la documentación siguiente.
+Editores de rangos/títulos azul/morado/celeste, permisos directos paginados desde servidor, confirmación de borrado, borradores e iconos bitmap conservados. Cliente 3.3.6 amplía editor lógico a 450px y separa etiquetas/campos/navegación. Pareja SERVIDOR 3.3.12 + CLIENTE 3.3.6; RankNetwork 5 / TitleNetwork 1. Servidor idéntico a entrega local 3.3.12.
 
-## Update / Actualización — 2026-10-17
+## Installation / Instalación
 
-Selected version / Versión seleccionada: **server 3.3.10 / client 3.3.4**. New file availability depends on CurseForge approval / La disponibilidad de los archivos nuevos depende de su aprobación en CurseForge.
+Use the exact server/client pair in the table. Do not mix earlier network revisions. / Usa la pareja exacta de la tabla; no mezcles revisiones de red anteriores.
 
-See [changes, exact files and installation](UPDATES-2026-10-17.md) / Consulta [cambios, archivos e instalación](UPDATES-2026-10-17.md). Preserve the world and TOML files / Conserva mundo y TOML.
+Stop the affected instance, back up the world/config, remove only the previous same-mod/same-side JAR, and install the table version. Preserve character data, wallets and TOML. Do not put server-only dependencies on clients. / Detén la instancia, respalda mundo/config, sustituye solo el JAR anterior del mismo mod y lado, y conserva personajes, cartera y TOML. No instales dependencias exclusivas de servidor en el cliente.
 
-## English
+## Dependencies / Dependencias
 
-Server controlled player ranks, permissions, titles, name tags and chat styling for Minecraft 1.20.1, Forge 47.x and Java 17. The client shows the custom rank/title interfaces and visual assets.
+**server**: `zonecore` [2.1.0,) (required/obligatorio; SERVER); `zonecrates` [2.0.0,) (optional/opcional; SERVER).
 
-### Install the pair
+**client**: No additional Zone requirement / Sin requisito Zone adicional.
 
-Install zoneranks-server-3.3.10-protected.jar and ZoneCore 2.1.0+ on the dedicated server. Install zoneranks-client-3.3.4-protected.jar on each client. Both JARs are on this **one CurseForge project**. The rank and title channels remain protocols 4 and 1. ZoneCrates 2.0.0+ is optional on the server, but needed for title purchases with Gochocoins. Keep the server and client versions stated here together.
+[Full changes and usage / Novedades y uso](RELEASE-2026-11-04.md) · [Configuration / Configuración](CONFIGURATION.md) · [Historical releases / Entregas históricas](RELEASES.md).
 
-### Use
+## Validation / Verificación
 
-Administrators can assign ranks, edit prefixes/colors/icons, grant permission nodes and manage titles through commands or the custom editor. /rangos permisos disponibles [page] lists permission nodes published by loaded Forge and ZoneCore modules; /rangos permisos buscar <text> [page] filters them. Mods that do not publish nodes cannot be enumerated, but their node strings can be entered manually. /zoneranks reload applies edits to rank TOML; /titulo reload applies title catalog edits. The optional marker zoneranks.commands.usuario grants a rank the current USUARIO permission set; it is **not** granted to other ranks automatically.
-
-Read [TOML paths and fields](CONFIGURATION.md) and [release compatibility](RELEASES.md). Back up the world and config/ZONEMODS/zoneranks before updating. Server rank and player data are persistent; do not publish assignments with real player UUIDs.
-
-## Español
-
-Rangos, permisos, títulos, etiquetas de nombre y estilo de chat controlados por el servidor para Minecraft 1.20.1, Forge 47.x y Java 17. El cliente muestra las interfaces personalizadas y recursos visuales.
-
-### Instala la pareja
-
-Instala zoneranks-server-3.3.10-protected.jar y ZoneCore 2.1.0+ en el servidor dedicado. Instala zoneranks-client-3.3.4-protected.jar en cada cliente. Ambos JAR están en **un único proyecto CurseForge**. Los canales de rangos y títulos conservan protocolos 4 y 1. ZoneCrates 2.0.0+ es opcional en servidor, pero necesario para comprar títulos con Gochocoins. Usa junta la pareja indicada.
-
-### Uso
-
-El administrador asigna rangos, edita prefijos, colores e iconos, concede nodos de permisos y gestiona títulos mediante comandos o editor propio. /rangos permisos disponibles [pagina] enumera los nodos publicados por Forge y ZoneCore de mods cargados; /rangos permisos buscar <texto> [pagina] los filtra. Los nodos no publicados no pueden enumerarse, pero pueden escribirse a mano. /zoneranks reload aplica cambios del TOML de rangos; /titulo reload aplica el catálogo de títulos. El marcador opcional zoneranks.commands.usuario concede a un rango los permisos actuales de USUARIO; **no** se asigna automáticamente a otros rangos.
-
-Consulta [rutas y claves TOML](CONFIGURATION.md) y [compatibilidad](RELEASES.md). Respalda el mundo y config/ZONEMODS/zoneranks antes de actualizar. Los datos de rangos y jugadores persisten; no publiques asignaciones con UUID reales.
+Original release checks and isolated startup/command registration of the protected set were reviewed. Shared schemas: Essentials 35, Guardian 13 and Misions 4 classes, with no mapping differences. This does not certify a new graphical client session, two-player gameplay, full third-party modpack, hosting deployment or FPS/TPS. / Revisadas las verificaciones de entrega y el arranque/registro de comandos del conjunto protegido. Esquemas compartidos sin diferencias de mapeo: Essentials 35, Guardian 13 y Misions 4 clases. No certifica una nueva sesión gráfica, dos jugadores, modpack completo, hosting ni FPS/TPS.
 
 ## Ownership / Titularidad
 
-Copyright © 2026 Elgochogms. New server 3.3.10 and client 3.3.4 binaries are All Rights Reserved. Earlier releases retain their original license rights. This repository contains documentation and the original avatar only; no source, private maps or player data. Obfuscation cannot make Java bytecode impossible to decompile.
-
+Original ZONE code and visual assets © Elgochogms. Public documentation only: no mod sources, private obfuscation maps, credentials or production player data. Existing rights of earlier distributions are preserved.
