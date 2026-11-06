@@ -1,31 +1,37 @@
-> **Current reference / Referencia actual — 2026-11-04:** [Updated release and detailed usage / Entrega y uso actualizado](RELEASE-2026-11-04.md). The current version/side table in README takes precedence over historical version examples below. / La pareja actual del README prevalece sobre ejemplos históricos de versiones.
+# ZoneRanks — Configuration / Configuración (2026-11-06)
 
-# ZoneRanks — TOML configuration reference
-
-This guide describes **server 3.3.9 / client 3.3.3**. The Forge keys below show source defaults. The dynamic TOML files are server owned under config/ZONEMODS/zoneranks. / Esta guía corresponde a **servidor 3.3.9 / cliente 3.3.3**. Las claves Forge siguientes muestran valores iniciales; los archivos TOML dinámicos pertenecen al servidor en config/ZONEMODS/zoneranks.
-
-## Configuration files
-
-- `config/zoneranks-common.toml`: display.defaultColor, display.nameTagEnabled and display.chatEnabled / apariencia, etiquetas y chat.
-- `config/ZONEMODS/zoneranks/rangos/creados.toml`: rank IDs and title, prefix, color, gradient, bold and icon fields / rangos y aspecto.
-- `config/ZONEMODS/zoneranks/permisos/rangos.toml`: [permisos.ID].nodos lists granted permission strings / nodos concedidos.
-- `config/ZONEMODS/zoneranks/jugadores/asignaciones.toml`: player UUID to rank mappings; private data / asignaciones privadas.
-- `config/ZONEMODS/zoneranks/rangos/predeterminado.toml`: activo=true/false and existing rango ID for automatic first rank / rango inicial.
-- `config/ZONEMODS/zoneranks/rangos/orden.toml`: ordered list for display only; does not grant permissions / orden solo visual.
-- `config/ZONEMODS/zoneranks/titulos/catalogo.toml`: [titulos.ID] with nombre, icono, descripcion, comprable, precio and persistent registro / catálogo de títulos.
-- `world/data/zoneranks.dat`: persistent world data; back up before migration / datos persistentes del mundo.
-
-## Detected keys / Claves detectadas
-
-| Key / Clave | Declared default | Source class |
-|---|---|---|
-| `chatEnabled` | `true` | `ZoneRanksConfig.java` |
-| `defaultColor` | `"white"` | `ZoneRanksConfig.java` |
-| `nameTagEnabled` | `true` | `ZoneRanksConfig.java` |
-
-## Editing / Edición
-
-In creados.toml the [rangos.ID] table defines whether a rank exists. A [permisos.ID] table cannot create a rank. Player assignment uses UUIDs; never publish a production copy. Edit the rank files while the server is stopped or use /zoneranks reload after valid edits. The title catalog uses /titulo reload. Invalid TOML is rejected without replacing the active set. / En creados.toml, [rangos.ID] determina si existe un rango; [permisos.ID] no puede crearlo. Las asignaciones contienen UUID; no publiques el archivo real. Edita con el servidor detenido o ejecuta /zoneranks reload tras cambios válidos. El catálogo de títulos usa /titulo reload. Un TOML inválido no reemplaza la configuración activa.
-
-Permission discovery lists published Forge and ZoneCore nodes from installed mods in pages of 12. Use /rangos permisos disponibles [pagina] or /rangos permisos buscar <texto> [pagina]. Manually enter undocumented nodes only after verifying the owning mod. The marker zoneranks.commands.usuario is optional and inherits the current USUARIO node set, without copying it to other ranks. / La búsqueda enumera nodos publicados por los mods instalados de Forge y ZoneCore en páginas de 12. Los nodos no publicados se escriben a mano tras comprobarlos. El marcador opcional zoneranks.commands.usuario hereda el conjunto actual de USUARIO sin copiarlo a otros rangos.
-
+| Side / Lado | Version / Versión |
+|---|---|
+| Server / Servidor | 3.3.13 |
+| Client / Cliente — retained / conservado | 3.3.6 |
+
+## Files / Archivos
+
+Server-owned files under `config/ZONEMODS/zoneranks/` / Archivos del servidor:
+
+| Path / Ruta | Purpose / Uso |
+|---|---|
+| `rangos/creados.toml` | Rank IDs and display fields / IDs y apariencia de rangos |
+| `permisos/rangos.toml` | Direct nodes in `[permisos.ID].nodos` / Nodos directos |
+| `jugadores/asignaciones.toml` | Private UUID-to-rank assignments / Asignaciones privadas UUID-rango |
+| `rangos/predeterminado.toml` | `activo` and existing `rango` for first assignment / Rango inicial existente |
+| `rangos/orden.toml` | Display order only / Orden visual; no concede permisos |
+| `titulos/catalogo.toml` | Title name, icon, description, purchase availability and price / Catálogo de títulos |
+
+`config/zoneranks-common.toml` controls display color/name tags/chat. Preserve `<mundo>/data/zoneranks.dat` with the world. / El TOML común controla color, etiquetas y chat; conserva los datos del mundo.
+
+`[rangos.ID]` creates the rank definition; adding only `[permisos.ID]` does not create one. Edit while stopped or apply valid rank edits with `/zoneranks reload`; titles use `/titulo reload`. Invalid TOML retains the active set. / La definición de rango se crea en `creados.toml`; una tabla de permisos sola no lo crea. Usa las recargas indicadas; un TOML inválido conserva los valores activos.
+
+## Permission tools / Herramientas
+
+- `/rangos permisos disponibles [pagina]`: published Forge/Core nodes / nodos publicados.
+- `/rangos permisos buscar <texto> [pagina]`: filter the catalog / filtrar catálogo.
+- `/rangos permiso listar <rango> [pagina]`: direct nodes / permisos directos.
+- `/rangos permiso comprobar <jugador> <nodo>`: inspect an online player / comprobar jugador conectado.
+- `/rangos permiso comparar <origen> <destino> [pagina]`: inspect missing direct nodes / comparar nodos directos.
+- `/rangos permiso combinar <origen> <destino>`: add missing nodes without removing destination entries / añadir faltantes sin borrar destino.
+- `/rangos clonar <origen> <nuevo>`: copy presentation and direct nodes, not player assignments / copiar aspecto y nodos, no asignaciones.
+
+The optional `zoneranks.commands.usuario` node inherits the current USUARIO permission set without copying it. Nothing enables it automatically. Nodes not published by a mod cannot automatically appear in discovery. / El nodo opcional hereda USUARIO sin copiarlo y no se activa automáticamente. Los nodos no publicados por un mod no se pueden descubrir solos.
+
+[Current release / Entrega actual](RELEASE-2026-11-06.md) · [README](README.md).
