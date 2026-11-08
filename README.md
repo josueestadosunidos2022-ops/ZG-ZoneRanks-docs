@@ -1,56 +1,51 @@
 # ZoneRanks
 
-Server ranks and permission management with custom titles, a title catalog and client editors.
+Server ranks and permissions, custom titles, and client administration screens. This release adds calendar-month and permanent commercial rank grants with persistent receipts.
 
-Rangos y permisos del servidor con títulos propios, catálogo de títulos y editores de cliente.
+Rangos y permisos, títulos propios e interfaces administrativas. Esta entrega añade rangos comerciales por mes calendario o permanentes con recibos persistentes.
 
-## Current release / Entrega actual — 2026-11-06
-
-Minecraft **1.20.1**, Forge **47.x** (47.4.x for this release set), Java **17**. File availability follows CurseForge approval. / Disponibilidad de archivos según aprobación de CurseForge.
+## Current release / Entrega actual — 2026-11-08
 
 | Side / Lado | Version / Versión |
 |---|---|
-| Server / Servidor | 3.3.13 |
+| Server / Servidor | 3.3.14 |
 | Client / Cliente — retained / conservado | 3.3.6 |
 
 **Protocol / Protocolo:** Ranks 5 / Titles 1.
 
-[Downloads / Descargas](https://www.curseforge.com/projects/1738043/files) · [Release guide / Guía de novedades](RELEASE-2026-11-06.md) · [Configuration / Configuración](CONFIGURATION.md)
+[Downloads / Descargas](https://www.curseforge.com/projects/1738043/files) · [Release / Novedades](RELEASE-2026-11-08.md) · [Configuration / Configuración](CONFIGURATION.md)
 
-## English — Requirements and quick start
+## English
 
-Server: ZoneCore 2.1.0+. ZoneCrates 2.0.0+ is optional for the wallet used by title purchases. Keep the existing client 3.3.6; this update does not require a new client JAR.
+Minecraft 1.20.1, Forge 47.x, Java 17. Server requires ZoneCore 2.1.0+; ZoneCrates 2.0.0+ is optional for title purchases. Only the server changes: keep client 3.3.6.
 
-Administrators can inspect ranks with `/rangos lista`, discover installed permission nodes with `/rangos permisos disponibles`, and reload rank edits with `/zoneranks reload`. LevelUp benefits are configured in LevelUp, not in the rank title text.
+Server 3.3.14 adds console-only monthly/permanent rank grants with unique order-line receipts. Replaying the same receipt does not add another month. Renewals use calendar months in America/New_York; different ranks keep independent expiry times and do not downgrade a higher permanent rank. `/rango vigencia` shows the player’s active and permanent/base rank and remaining periods. Expiry revokes only flight marked as granted by ZoneRanks. Preserve world data and receipts; do not downgrade after selling months without reconciling a coherent backup. Keep client 3.3.6, Ranks 5 / Titles 1; Core is required only on the server. No automatic recurring billing is added.
 
-### What changed
+Players use `/rango vigencia`. Administrators verify `rangos tiendaversion` from the console before enabling monthly products. The existing rank editors and permissions remain available.
 
-- Server 3.3.13 exposes the current rank ID and rank catalog through a public query API retained in the protected build.
-- ZoneLevelUp r55 can use real assigned ranks for automatic benefits; decorated titles do not replace stable rank IDs.
-- Keeps the previous editor, permission catalog, explicit USUARIO inheritance and current network protocols.
+## Español
 
-## Español — Requisitos e inicio
+Minecraft 1.20.1, Forge 47.x, Java 17. Servidor requiere ZoneCore 2.1.0+; ZoneCrates 2.0.0+ es opcional para compras de títulos. Solo cambia servidor: conserva cliente 3.3.6.
 
-Servidor: ZoneCore 2.1.0+. ZoneCrates 2.0.0+ es opcional para la cartera de compras de títulos. Conserva el cliente 3.3.6 existente; esta actualización no requiere un JAR cliente nuevo.
+Servidor 3.3.14 añade entregas mensuales/permanentes solo por consola, con recibos únicos por línea de pedido. Reintentar el mismo no suma otro mes. Renovaciones por mes calendario en America/New_York; rangos distintos conservan vencimientos independientes sin rebajar un permanente superior. `/rango vigencia` muestra rango activo, permanente/base y periodos. Al vencer se retira solo vuelo concedido y marcado por ZoneRanks. Conserva datos y recibos; no vuelvas de versión tras vender meses sin reconciliar un respaldo. Mantén cliente 3.3.6, Ranks 5 / Titles 1; Core solo es obligatorio en servidor. No añade cobros recurrentes automáticos.
 
-Los administradores consultan rangos con `/rangos lista`, descubren nodos con `/rangos permisos disponibles` y recargan con `/zoneranks reload`. Los bonos de LevelUp se configuran en LevelUp, no en el texto decorativo del rango.
-
-### Novedades
-
-- Servidor 3.3.13 expone la ID de rango actual y el catálogo mediante una API pública conservada en la compilación protegida.
-- ZoneLevelUp r55 puede usar rangos reales asignados para beneficios automáticos; los títulos decorados no sustituyen IDs estables.
-- Conserva editor, catálogo de permisos, herencia explícita de USUARIO y protocolos actuales.
+Los jugadores usan `/rango vigencia`. Administración verifica `rangos tiendaversion` en consola antes de habilitar productos mensuales. Se conservan editores y permisos anteriores.
 
 ## Updating / Actualizar
 
-Stop the affected instance, back up world/configuration, replace only the previous same-mod/same-side JAR and retain player data. Never install the dedicated and client JARs of one mod together. / Detén la instancia correspondiente, respalda mundo/configuración y sustituye solo el JAR del mismo mod y lado conservando datos. Nunca instales juntos los JAR dedicado y cliente del mismo mod.
+Stop the affected instance, back up world/configuration and replace only the previous same-mod/same-side JAR. Keep one JAR per mod per instance and preserve player data. / Detén la instancia correspondiente, respalda mundo/configuración y sustituye solo el JAR del mismo mod y lado. Conserva un JAR por mod e instancia y los datos de jugador.
 
 ## Validation scope / Alcance de verificación
 
-The r55 delivery checks the rank API, real rank IDs and assignments with LevelUp, and inspects preservation of the API in the protected build. It does not certify the full production modpack or a new visual client session.
+The delivery includes isolated receipt, renewal, expiry, persistence and protected-server checks. It does not establish real production purchases or full-modpack performance.
 
-La entrega r55 comprueba API, IDs y asignaciones con LevelUp y su conservación en el JAR protegido. No certifica el modpack completo de producción ni una sesión gráfica nueva.
+La entrega incluye pruebas aisladas de recibos, renovación, vencimiento, persistencia y servidor protegido. No acredita compras reales en producción ni rendimiento del modpack completo.
 
 ## Rights / Derechos
 
-Original ZONE code and assets © Elgochogms; existing licenses and third-party notices remain applicable. This repository provides public documentation. / Código y recursos originales ZONE © Elgochogms; se conservan licencias y avisos de terceros. Este repositorio contiene documentación pública.
+Original ZONE code/assets © Elgochogms; existing third-party licenses and notices remain applicable. Public documentation repository. / Código y recursos originales ZONE © Elgochogms; se conservan licencias y avisos de terceros. Repositorio de documentación pública.
+
+
+## Previous documentation / Documentación anterior
+
+[2026-11-06 release / Entrega 2026-11-06](RELEASE-2026-11-06.md). Version examples in historical releases remain historical. / Los ejemplos de versiones de entregas anteriores son históricos.
